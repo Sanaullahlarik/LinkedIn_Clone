@@ -8,15 +8,15 @@ import Badge from "@mui/material/Badge";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import HomeIcon from "@mui/icons-material/Home";
 import PeopleIcon from "@mui/icons-material/People";
-import AccountCircle from "@mui/icons-material/AccountCircle";
 import SearchIcon from "@mui/icons-material/Search";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Box } from "@mui/material";
+import { Avatar, Box, Typography } from "@mui/material";
 import WorkIcon from "@mui/icons-material/Work";
 import MessageIcon from "@mui/icons-material/Message";
 import AppsIcon from "@mui/icons-material/Apps";
 import CasinoIcon from "@mui/icons-material/Casino";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import ProfilePicture from "../Assets/Sanaullah.png";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -56,51 +56,74 @@ const StyledInputBase = styled(InputBase)(() => ({
 export default function LinkedInHeader() {
   return (
     <AppBar
-      className="py-1"
       position="static"
-      style={{ backgroundColor: "#ffffff" }}
+      style={{
+        backgroundColor: "#ffffff",
+        boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
+      }}
     >
-      <Toolbar className="container">
-        <div className="d-flex align-items-center justifyContent-center">
-          <LinkedInIcon style={{ fontSize: "3rem", color: "#0077b5" }} />
+      <Toolbar className="container d-flex justify-content-between align-items-center py-1">
+        <div className="d-flex align-items-center">
+          <Box>
+            <LinkedInIcon
+              className="d-none d-sm-block"
+              style={{ fontSize: "2.5rem", color: "#0077b5" }}
+            />
+          </Box>
+          <Box className="d-block d-sm-none">
+            <Avatar alt="Sanaullah" src={ProfilePicture} />
+          </Box>
+          <Search className="ms-3" style={{ flexGrow: 1, maxWidth: "400px" }}>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search"
+              inputProps={{ "aria-label": "search" }}
+            />
+          </Search>
         </div>
 
-        <Search className="ms-3 flex-grow-1">
-          <SearchIconWrapper>
-            <SearchIcon />
-          </SearchIconWrapper>
-          <StyledInputBase
-            placeholder="Search"
-            inputProps={{ "aria-label": "search" }}
-          />
-        </Search>
-
-        <Box className="d-flex" style={{ marginLeft: "100px" }}>
-          <Box className="text-center mx-2">
+        <Box className="d-flex align-items-center" style={{ gap: "30px" }}>
+          <Box className="d-flex flex-column align-items-center text-center d-none d-md-block">
             <IconButton color="inherit">
               <Badge color="error" variant="dot">
-                <HomeIcon
-                  className=""
-                  style={{ color: "#000", fontSize: "34px" }}
-                />
+                <HomeIcon style={{ color: "#000", fontSize: "30px" }} />
               </Badge>
             </IconButton>
-            <span className="text-dark d-none d-md-block">Home</span>
+            <span
+              className="text-dark d-none d-md-block"
+              style={{ fontSize: "12px" }}
+            >
+              Home
+            </span>
           </Box>
 
-          <Box className="text-center mx-3">
+          <Box className="d-flex flex-column align-items-center text-center d-none d-md-block">
             <IconButton color="inherit">
-                <PeopleIcon style={{ color: "#666", fontSize: "30px" }} />
+              <PeopleIcon style={{ color: "#666", fontSize: "30px" }} />
             </IconButton>
-            <span className="text-dark d-none d-md-block">Network</span>
+            <span
+              className="text-dark d-none d-md-block"
+              style={{ fontSize: "12px" }}
+            >
+              Network
+            </span>
           </Box>
-          <Box className="text-center mx-3">
+
+          <Box className="d-flex flex-column align-items-center text-center d-none d-md-block">
             <IconButton color="inherit">
-                <WorkIcon style={{ color: "#666", fontSize: "30px" }} />
+              <WorkIcon style={{ color: "#666", fontSize: "30px" }} />
             </IconButton>
-            <span className="text-dark d-none d-md-block">Jobs</span>
+            <span
+              className="text-dark d-none d-md-block"
+              style={{ fontSize: "12px" }}
+            >
+              Jobs
+            </span>
           </Box>
-          <Box className="text-center mx-3">
+
+          <Box className="d-flex flex-column align-items-center text-center d-none d-md-block">
             <IconButton color="inherit">
               <Badge color="error" badgeContent={5}>
                 <NotificationsIcon
@@ -108,31 +131,59 @@ export default function LinkedInHeader() {
                 />
               </Badge>
             </IconButton>
-            <span className="text-dark d-none d-md-block">Notifications</span>
+            <span
+              className="text-dark d-none d-md-block"
+              style={{ fontSize: "12px" }}
+            >
+              Notifications
+            </span>
           </Box>
 
-          <Box className="text-center mx-2">
+          <Box className="d-flex flex-column align-items-center text-center">
             <IconButton color="inherit">
-              <AccountCircle style={{ color: "#666", fontSize: "30px" }} />
+              <MessageIcon style={{ color: "#666", fontSize: "30px" }} />
             </IconButton>
-            <span className="text-dark d-none d-md-block">Me</span>
+            <span className="text-dark d-none d-md-block" style={{ fontSize: "0.75rem" }}>
+                Messaging
+              </span>
           </Box>
-          <Box></Box>
-          <Box className="ms-5">
-            <IconButton color="inherit">
-              <AppsIcon
-                style={{ color: "#666", fontSize: "34px", marginLeft: "12px" }}
+
+          <Box className="d-flex flex-column align-items-center text-center d-none d-md-block">
+            <IconButton>
+              <Avatar
+                alt="Sanaullah"
+                src={ProfilePicture}
+                sx={{ width: 30, height: 30 }}
               />
             </IconButton>
-            <span className="text-dark d-none d-md-block">for Business</span>
+            <span
+              className="text-dark d-none d-md-block"
+              style={{ fontSize: "12px" }}
+            >
+              Me
+            </span>
           </Box>
-          <Box className="ms-5">
+
+          <Box className="d-flex flex-column align-items-center text-center d-none d-lg-block">
             <IconButton color="inherit">
-              <CasinoIcon
-                style={{ color: "#666", fontSize: "34px", marginLeft: "39px" }}
-              />
+              <AppsIcon style={{ color: "#666", fontSize: "30px" }} />
             </IconButton>
-            <span className="text-dark d-none d-md-block">
+            <span
+              className="text-dark d-none d-md-block"
+              style={{ fontSize: "12px" }}
+            >
+              For Business
+            </span>
+          </Box>
+
+          <Box className="d-flex flex-column align-items-center text-center d-none d-lg-block">
+            <IconButton color="inherit">
+              <CasinoIcon style={{ color: "#666", fontSize: "30px" }} />
+            </IconButton>
+            <span
+              className="text-dark d-none d-md-block"
+              style={{ fontSize: "12px" }}
+            >
               Try Sales Navigator
             </span>
           </Box>

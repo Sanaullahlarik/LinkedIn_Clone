@@ -10,7 +10,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import PeopleIcon from "@mui/icons-material/People";
 import SearchIcon from "@mui/icons-material/Search";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Avatar, Box, Typography } from "@mui/material";
+import { Avatar, Box} from "@mui/material";
 import WorkIcon from "@mui/icons-material/Work";
 import MessageIcon from "@mui/icons-material/Message";
 import AppsIcon from "@mui/icons-material/Apps";
@@ -73,13 +73,13 @@ export default function LinkedInHeader() {
           <Box className="d-block d-sm-none">
             <Avatar alt="Sanaullah" src={ProfilePicture} />
           </Box>
-          <Search className="ms-3" style={{ flexGrow: 1, maxWidth: "400px" }}>
+          <Search className="" style={{ flexGrow: 1, maxWidth: "400px" }}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search"
-              inputProps={{ "aria-label": "search" }}
+              inputProps={{ "label": "search" }}
             />
           </Search>
         </div>
@@ -122,7 +122,14 @@ export default function LinkedInHeader() {
               Jobs
             </span>
           </Box>
-
+          <Box className="d-flex flex-column align-items-center text-center">
+            <IconButton color="inherit">
+              <MessageIcon style={{ color: "#666", fontSize: "30px" }} />
+            </IconButton>
+            <span className="text-dark d-none d-md-block" style={{ fontSize: "0.75rem" }}>
+                Messaging
+              </span>
+          </Box>
           <Box className="d-flex flex-column align-items-center text-center d-none d-md-block">
             <IconButton color="inherit">
               <Badge color="error" badgeContent={5}>
@@ -138,16 +145,6 @@ export default function LinkedInHeader() {
               Notifications
             </span>
           </Box>
-
-          <Box className="d-flex flex-column align-items-center text-center">
-            <IconButton color="inherit">
-              <MessageIcon style={{ color: "#666", fontSize: "30px" }} />
-            </IconButton>
-            <span className="text-dark d-none d-md-block" style={{ fontSize: "0.75rem" }}>
-                Messaging
-              </span>
-          </Box>
-
           <Box className="d-flex flex-column align-items-center text-center d-none d-md-block">
             <IconButton>
               <Avatar

@@ -13,6 +13,7 @@ import postingImage3 from "../../Assets/React Redux.png";
 import postingImage4 from "../../Assets/Maam Misbah.jpeg";
 import postingImage5 from "../../Assets/Maam Wardah.jpeg";
 import postingImage6 from "../../Assets/Ijaz Liaqat Post.jpeg";
+import postingImage7 from "../../Assets/liaqat.jpeg"
 import ProfileImage2 from "../../Assets/Passport Pic.jpg";
 import ProfileImage from "../../Assets/Sanaullah.png";
 import ProfileImage3 from "../../Assets/LinkedIn Profile.jpeg";
@@ -49,7 +50,7 @@ const PostSection = () => {
       image: postingImage3,
     },
     {
-      id: 3,
+      id: 4,
       name: "Wardah Noor",
       role: "Upskilling & Empowering youth via tech skills | LUMS'24 | Acumen Fellow'23",
       content:
@@ -58,7 +59,7 @@ const PostSection = () => {
       image: postingImage5,
     },
     {
-      id: 2,
+      id: 5,
       name: "Ijaz Liaqat",
       role: "React/Next Js Developer | Building efficient and scalable web applications | Educator",
       content:
@@ -67,7 +68,7 @@ const PostSection = () => {
       image: postingImage6,
     },
     {
-      id: 3,
+      id: 6,
       name: "Misbah Shafi",
       role: "Lead Learning and Development | L&D Strategy | LUMS'23 | xWave | Looking for React.js Developers? Reach out to me.",
       content:
@@ -75,28 +76,21 @@ const PostSection = () => {
       avatar: ProfileImage4,
       image: postingImage4,
     },
+    {
+      id: 7,
+      name: "Ijaz Liaqat",
+      role: "React/Next Js Developer | Building efficient and scalable web applications | Educator",
+      content:
+        "My journey from Non-tech to Tech person.Embracing Change: Transitioning from education to web development was a bold move, but I embraced the challenge head-on during the COVID-19 pandemic.Learning the Basics: Starting from scratch, I immersed myself in learning the fundamentals of HTML, CSS, and JavaScript, building a solid foundation for my journey ahead.Guidance from IEC: I owe a huge debt of gratitude to the team at Institute of Emerging Careers for their unwavering support. Their comprehensive courses and hands-on approach provided me with the tools and confidence I needed to thrive in the tech industry.Mentors' Support: I leaned on mentors like Muhammad Usama and Syed Ommer Amer , whose expertise and encouragement helped me navigate the complexities of web development with ease.Hands-On ExperiencePutting theory into practice, I embarked on various projects, both within IEC's learning environment and beyond, honing my skills and gaining real-world experience with each endeavor.Continuous GrowthI never stopped learning. Whether it was staying updated on the latest technologies or refining my coding techniques, I remained committed to continuous improvement.Now, with over 2 years of experience, I'm grateful for the journey that has shaped me into the tech professional I am today. Here's to conquering challenges, embracing growth, and seizing every opportunity that comes my way.",
+      avatar: ProfileImage6,
+      image: postingImage7,
+    },
   ];
 
   return (
     <Box>
-      <Box
-        sx={{
-          p: 3,
-          border: "1px solid",
-          borderRadius: 2,
-          display: "flex",
-          flexDirection: "column",
-          gap: 2,
-          backgroundColor: "white",
-        }}
-      >
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: 2,
-          }}
-        >
+      <Box className="p-3 border rounded-2 d-flex flex-column gap-2 bg-white">
+        <Box className="d-flex align-items-center gap-2">
           <Avatar src={ProfileImage} />
           <TextField
             fullWidth
@@ -114,21 +108,19 @@ const PostSection = () => {
         <Box className="d-flex flex-wrap justify-content-evenly">
           <Button
             color="black"
-            startIcon={<VideoCallIcon style={{ color: "green" }} />}
+            startIcon={<VideoCallIcon className="text-success" />}
           >
             Video
           </Button>
-          <Button
-            color="black"
+          <Button className="text-dark"
             startIcon={<PhotoCameraIcon style={{ color: "blue" }} />}
           >
             Photo
           </Button>
           <Button
             color="black"
-            startIcon={<ArticleIcon style={{ color: "orange" }} />}
+            startIcon={<ArticleIcon className="text-warning" />}
           >
-            {" "}
             article
           </Button>
         </Box>

@@ -5,6 +5,7 @@ import queenGameImg from "../../../Components/Assets/queen.svg";
 import pinpointGameImg from "../../../Components/Assets/pinpoint.svg";
 import crossClimbGameImg from "../../../Components/Assets/crossClimb.svg";
 import HiringImg from "../../Assets/HiringImage.png";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const GamesSection = () => {
   return (
@@ -20,8 +21,10 @@ const GamesSection = () => {
                 style={{ width: "30px", height: "auto" }}
               />
               <Box className="ms-3">
-              <Typography variant="body1" className="fw-medium">Crossclimb</Typography>
-              <Typography>Harmonize the Grid</Typography>
+                <Typography variant="body1" className="fw-medium">
+                  Cross climb
+                </Typography>
+                <Typography>Harmonize the Grid</Typography>
               </Box>
             </Box>
             <Box className="d-flex my-1">
@@ -31,9 +34,10 @@ const GamesSection = () => {
                 style={{ width: "30px", height: "auto" }}
               />
               <Box className="ms-3">
-              <Typography variant="body1" className="fw-medium">Queens</Typography>
-              <Typography>Crown each region</Typography>
-
+                <Typography variant="body1" className="fw-medium">
+                  Queens
+                </Typography>
+                <Typography>Crown each region</Typography>
               </Box>
             </Box>
             <Box className="d-flex my-1">
@@ -43,7 +47,9 @@ const GamesSection = () => {
                 style={{ width: "30px", height: "auto" }}
               />
               <Box className="ms-3">
-              <Typography variant="body1" className="fw-medium">Pinpoint</Typography>
+                <Typography variant="body1" className="fw-medium">
+                  Pinpoint
+                </Typography>
                 <Typography>Guess the Category</Typography>
               </Box>
             </Box>
@@ -54,8 +60,10 @@ const GamesSection = () => {
                 style={{ width: "30px", height: "auto" }}
               />
               <Box className="ms-3">
-              <Typography variant="body1" className="fw-medium">Crossclimb</Typography>
-              <Typography>Unlock a trivia ladder</Typography>
+                <Typography variant="body1" className="fw-medium">
+                  Crossclimb
+                </Typography>
+                <Typography>Unlock a trivia ladder</Typography>
               </Box>
             </Box>
           </Box>
@@ -63,13 +71,9 @@ const GamesSection = () => {
 
         <MuiCard className="rounded-3 shadow-black mt-3">
           <CardContent className="p-0">
-            <img className="w-100 "
-              src={HiringImg}
-              alt="Hiring" />
+            <img className="w-100" src={HiringImg} alt="Hiring" />
             <Box className="p-2">
-              <Typography className="mb-1 fw-bold "
-                variant="h6"
-              >
+              <Typography className="mb-1 fw-bold " variant="h6">
                 See who's hiring on LinkedIn.
               </Typography>
             </Box>
@@ -108,7 +112,7 @@ const GamesSection = () => {
             color: "text.secondary",
           }}
         >
-          LinkedIn Corporation © 2025
+          LinkedIn <LinkedInIcon className="text-primary" /> Corporation © 2025
         </Typography>
       </Box>
     </div>

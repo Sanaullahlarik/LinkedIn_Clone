@@ -80,16 +80,10 @@ export default function LinkedInHeader() {
                 sx={{ fontSize: "2.5rem", color: "#0077b5" }}
               />
             </Box>
-            <Box className="d-block d-sm-none">
+            <Box className="d-block me-2 d-sm-none">
               <Avatar alt="Sanaullah" src={ProfilePicture} />
             </Box>
-            <Box
-              style={{
-                width: "100%",
-                maxWidth: "400px",
-                overflow: "hidden",
-              }}
-            >
+            <Box>
               <Search>
                 <SearchIconWrapper>
                   <SearchIcon />
@@ -101,7 +95,7 @@ export default function LinkedInHeader() {
               </Search>
             </Box>
           </Box>
-          <Box className="d-flex align-items-center" style={{ gap: "30px" }}>
+          <Box className="d-flex justify-content-around align-items-center w-50">
             <Link className="text-decoration-none" to="/">
               <Box className="d-flex flex-column align-items-center text-center d-none d-md-block">
                 <IconButton color="inherit">
@@ -153,20 +147,18 @@ export default function LinkedInHeader() {
                 Messaging
               </span>
             </Box>
-            {/* <Box className="d-flex flex-column align-items-center text-center d-none d-md-block">
-              <IconButton color="inherit">
-                <Badge color="error" badgeContent={5}>
-                  <NotificationsIcon sx={{ color: "#666", fontSize: "30px" }} />
-                </Badge>
+            <Box className="d-flex flex-column align-items-center d-none d-md-block">
+              <IconButton className="ms-2" color="inherit">
+                <NotificationsIcon sx={{ color: "#666", fontSize: "30px" }} />
               </IconButton>
               <span
                 className="text-dark d-none d-md-block"
                 style={{ fontSize: "12px" }}
               >
-                Notifications
+                Notification
               </span>
-            </Box> */}
-            <Box className="mx-2">
+            </Box>
+            <Box>
               {/* Profile Detail modal */}
               <IconButton className="d-none d-md-block" onClick={handleMenu}>
                 <Avatar
@@ -181,7 +173,6 @@ export default function LinkedInHeader() {
               >
                 Me
               </Typography>
-
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
@@ -201,7 +192,7 @@ export default function LinkedInHeader() {
                       <Typography variant="subtitle1" fontWeight="bold">
                         Sanaullah Larik
                       </Typography>
-                      <Typography variant="body2" color="textSecondary">
+                      <Typography variant="body2">
                         Frontend Developer | HTML5 | CSS3 | JavaScript |
                         React.js
                       </Typography>
@@ -211,16 +202,18 @@ export default function LinkedInHeader() {
                     <Link to="/ProfilePage" className="text-decoration-none">
                       <Button
                         variant="outlined"
-                        className="text-small rounded-3 text-center text-primary fs-6"
+                        className="text-small rounded-3 text-center text-primary rounded-pill"
                       >
                         View Profile
                       </Button>
                     </Link>
-                    <Button variant="contained" className="text-white px-4">
+                    <Button
+                      variant="contained"
+                      className="text-white px-4 rounded-pill"
+                    >
                       Verify
                     </Button>
                   </Box>
-
                   <Divider className="my-2 w-100" />
                   <Box>
                     <Typography variant="subtitle2" fontWeight="bold">
@@ -248,7 +241,9 @@ export default function LinkedInHeader() {
                 </Box>
               </Menu>
             </Box>
-            <Box className="d-flex flex-column align-items-center text-center d-none d-lg-block">
+          </Box>
+          <Box className="d-flex align-items-center">
+            <Box className="d-flex flex-column align-items-center text-center d-none d-lg-block me-3">
               <IconButton color="inherit">
                 <AppsIcon sx={{ color: "#666", fontSize: "30px" }} />
               </IconButton>

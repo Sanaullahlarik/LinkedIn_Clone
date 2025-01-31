@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ProfileDetailsPage from './Components/ProfilePage/ProfilePage.jsx';
 import HomePage from './Components/home/HomePage.jsx';
 import LinkedInHeader from './Components/Layout/AppLayout.jsx';
-import JobDetails from './Components/JobDetail/JobDetails.jsx';
+import JobPage from './Components/JobPage/Sections/JobMainPage.jsx';
 
 function App() {
   const router = createBrowserRouter([
@@ -16,7 +16,7 @@ function App() {
         element: <HomePage />,
       },
       { path: "/ProfilePage", element: <ProfileDetailsPage /> },
-      { path: "/jobDetail", element: <JobDetails /> },
+      { path: "/jobDetail", element: <JobPage /> },
       ],
     },
 

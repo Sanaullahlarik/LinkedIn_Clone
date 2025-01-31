@@ -198,21 +198,15 @@ export default function LinkedInHeader() {
                       </Typography>
                     </Box>
                   </Box>
-                  <Box className="d-flex align-items-center justify-content-between">
+                  <Box>
                     <Link to="/ProfilePage" className="text-decoration-none">
-                      <Button
+                      <Button fullWidth
                         variant="outlined"
                         className="text-small rounded-3 text-center text-primary rounded-pill"
                       >
                         View Profile
                       </Button>
                     </Link>
-                    <Button
-                      variant="contained"
-                      className="text-white px-4 rounded-pill"
-                    >
-                      Verify
-                    </Button>
                   </Box>
                   <Divider className="my-2 w-100" />
                   <Box>

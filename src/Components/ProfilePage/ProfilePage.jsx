@@ -22,7 +22,6 @@ import CoverPhoto from "../Assets/banner.png";
 import ProfilePicture from "../Assets/Sanaullah.png";
 import LaunchIcon from "@mui/icons-material/Launch";
 import EditIcon from "@mui/icons-material/Edit";
-import CloseIcon from "@mui/icons-material/Close";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import PeopleIcon from "@mui/icons-material/People";
 import BarChartIcon from "@mui/icons-material/BarChart";
@@ -668,7 +667,7 @@ const ProfilePage = () => {
                 </CardContent>
               </Card>
 
-              {/* dkfohgjfkh */}
+              {/* Skill section */}
               <Box className="col-12">
                 <Card
                   className="shadow-sm mt-3"

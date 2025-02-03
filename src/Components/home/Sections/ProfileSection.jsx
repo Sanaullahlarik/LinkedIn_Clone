@@ -7,22 +7,20 @@ import {
   Divider,
   CardContent,
 } from "@mui/material";
-import ProfilePicture from "../../../Components/Assets/Sanaullah.png";
-import CoverPhoto from "../../../Components/Assets/banner.png";
+import ProfilePicture from "../../Assets/Sanaullah.png";
+import CoverPhoto from "../../Assets/banner.png";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import Diversity3Icon from "@mui/icons-material/Diversity3";
-import AddIcon from "@mui/icons-material/Add";
 
 const AboutSection = () => {
   return (
     <>
       <Card>
-        <CardContent sx={{ padding: 0 }}>
+        <CardContent className="p-0">
           {/* Cover Photo */}
           <Box
             sx={{
               height: "100px",
+              position: "relative",
               backgroundColor: "#ddd",
               backgroundImage: `url(${CoverPhoto})`,
               backgroundSize: "cover",
@@ -30,21 +28,13 @@ const AboutSection = () => {
             }}
           />
 
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              padding: "16px 0",
-              marginTop: "-30px",
-            }}
-          >
+          <Box className="d-flex flex-column align-items-center p-3">
             <Avatar
+              className="mb-3 border border-3 border-white"
               sx={{
                 width: 80,
                 height: 80,
-                marginBottom: "16px",
-                border: "3px solid #fff",
+                marginTop:"-60px"
               }}
               src={ProfilePicture}
               alt="Profile Picture"
@@ -52,28 +42,28 @@ const AboutSection = () => {
             <Typography variant="h6" className="fw-bold">
               Sanaullah Larik
             </Typography>
-            <Typography variant="body2" color="textSecondary">
-              Frontend Developer
+            <Typography variant="body2" className="text-secondary text-center">
+            Frontend Developer | HTML5 | CSS3 | JavaScript | React.js
             </Typography>
-            <Box>
+            <Box className="w-100">
               <Divider className="my-2 w-100" />
               <Typography variant="body2" className="fw-bold">
-                Profile viewers: <span style={{ color: "#0077b5" }}>75</span>
+                Profile viewers: <span className="text-primary">75</span>
               </Typography>
               <Typography variant="body2" className="fw-bold">
-                Post impressions: <span style={{ color: "#0077b5" }}>998</span>
+                Post impressions: <span className="text-primary">998</span>
               </Typography>
             </Box>
           </Box>
           <Divider className="my-2 w-100" />
           <Typography className="ms-3" variant="body2">
-            Enhance lead quality width Sales Nav
+            Enhance lead quality with Sales Nav
           </Typography>
           <Typography variant="body2" className="fw-bold ms-3">
             Try Now For PKR 0
           </Typography>
           <Typography variant="body2" className="fw-bold ms-3">
-            Post impressions: <span style={{ color: "#0077b5" }}>998</span>
+            Post impressions: <span className="text-primary">998</span>
           </Typography>
           <Divider className="my-2 w-100" />
           <Typography variant="body2" className="fw-bold ms-3">

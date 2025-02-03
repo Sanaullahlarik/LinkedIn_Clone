@@ -11,64 +11,6 @@ const GamesSection = () => {
   return (
     <div>
       <Box>
-        <Box className="p-3 d-flex rounded-2 flex-column gap-2 bg-white">
-          <p>Today’s puzzle games</p>
-          <Box>
-            <Box className="d-flex">
-              <img
-                src={tangoGameImg}
-                alt="Tango Game"
-                style={{ width: "30px", height: "auto" }}
-              />
-              <Box className="ms-3">
-                <Typography variant="body1" className="fw-medium">
-                  Cross climb
-                </Typography>
-                <Typography>Harmonize the Grid</Typography>
-              </Box>
-            </Box>
-            <Box className="d-flex my-1">
-              <img
-                src={queenGameImg}
-                alt="Queen Game"
-                style={{ width: "30px", height: "auto" }}
-              />
-              <Box className="ms-3">
-                <Typography variant="body1" className="fw-medium">
-                  Queens
-                </Typography>
-                <Typography>Crown each region</Typography>
-              </Box>
-            </Box>
-            <Box className="d-flex my-1">
-              <img
-                src={pinpointGameImg}
-                alt="Pinpoint Game"
-                style={{ width: "30px", height: "auto" }}
-              />
-              <Box className="ms-3">
-                <Typography variant="body1" className="fw-medium">
-                  Pinpoint
-                </Typography>
-                <Typography>Guess the Category</Typography>
-              </Box>
-            </Box>
-            <Box className="d-flex">
-              <img
-                src={crossClimbGameImg}
-                alt="Cross climb Game"
-                style={{ width: "30px", height: "auto" }}
-              />
-              <Box className="ms-3">
-                <Typography variant="body1" className="fw-medium">
-                  Crossclimb
-                </Typography>
-                <Typography>Unlock a trivia ladder</Typography>
-              </Box>
-            </Box>
-          </Box>
-        </Box>
-
         <MuiCard className="rounded-3 shadow-black mt-3">
           <CardContent className="p-0">
             <img className="w-100" src={HiringImg} alt="Hiring" />
@@ -87,30 +29,33 @@ const GamesSection = () => {
           className="d-flex flex-wrap justify-content-center gap-2"
           sx={{ fontSize: "12px", lineHeight: 1.5 }}
         >
-          {[
-            "About",
-            "Accessibility",
-            "Help Center",
-            "Privacy & Terms",
-            "Ad Choices",
-            "Advertising",
-            "Business Services",
-            "Get the LinkedIn app",
-            "More",
-          ].map((link, index) => (
-            <span key={index} style={{ cursor: "pointer", color: "#0077b5" }}>
-              {link}
-            </span>
-          ))}
+          <span style={{ cursor: "pointer", color: "#0077b5" }}>About</span>
+          <span style={{ cursor: "pointer", color: "#0077b5" }}>
+            Accessibility
+          </span>
+          <span style={{ cursor: "pointer", color: "#0077b5" }}>
+            Help Center
+          </span>
+          <span style={{ cursor: "pointer", color: "#0077b5" }}>
+            Privacy & Terms
+          </span>
+          <span style={{ cursor: "pointer", color: "#0077b5" }}>
+            Ad Choices
+          </span>
+          <span style={{ cursor: "pointer", color: "#0077b5" }}>
+            Advertising
+          </span>
+          <span style={{ cursor: "pointer", color: "#0077b5" }}>
+            Business Services
+          </span>
+          <span style={{ cursor: "pointer", color: "#0077b5" }}>
+            Get the LinkedIn app
+          </span>
+          <span style={{ cursor: "pointer", color: "#0077b5" }}>More</span>
         </Typography>
         <Typography
+          className="mt-1 d-block fs-6 text-secondary"
           variant="caption"
-          sx={{
-            marginTop: 1,
-            display: "block",
-            fontSize: "10px",
-            color: "text.secondary",
-          }}
         >
           LinkedIn <LinkedInIcon className="text-primary" /> Corporation © 2025
         </Typography>

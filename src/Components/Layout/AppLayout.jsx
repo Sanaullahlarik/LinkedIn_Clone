@@ -74,12 +74,14 @@ export default function LinkedInHeader() {
       >
         <Toolbar className="container d-flex justify-content-between align-items-center py-1">
           <Box className="d-flex align-items-center">
+          <Link to="/">
             <Box>
               <LinkedInIcon
                 className="d-none d-sm-block"
                 sx={{ fontSize: "2.5rem", color: "#0077b5" }}
               />
             </Box>
+            </Link>
             <Box className="d-block me-2 d-sm-none">
               <Avatar alt="Sanaullah" src={ProfilePicture} />
             </Box>

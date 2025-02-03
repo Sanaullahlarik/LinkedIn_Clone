@@ -1,5 +1,13 @@
-import React from "react";
-import { Avatar, Box, Button, Card, TextField } from "@mui/material";
+import React, { useState } from "react";
+import {
+  Avatar,
+  Box,
+  Button,
+  Card,
+  Modal,
+  TextField,
+  Typography,
+} from "@mui/material";
 import VideoCallIcon from "@mui/icons-material/VideoCall";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import ArticleIcon from "@mui/icons-material/Article";
@@ -13,21 +21,26 @@ import postingImage3 from "../../Assets/React Redux.png";
 import postingImage4 from "../../Assets/Maam Misbah.jpeg";
 import postingImage5 from "../../Assets/Maam Wardah.jpeg";
 import postingImage6 from "../../Assets/Ijaz Liaqat Post.jpeg";
-import postingImage7 from "../../Assets/liaqat.jpeg"
+import postingImage7 from "../../Assets/liaqat.jpeg";
+import postingImage8 from "../../Assets/Abeera-Post.jpeg";
 import ProfileImage2 from "../../Assets/Passport Pic.jpg";
 import ProfileImage from "../../Assets/Sanaullah.png";
 import ProfileImage3 from "../../Assets/LinkedIn Profile.jpeg";
 import ProfileImage4 from "../../Assets/Maam Profile.jpeg";
 import ProfileImage5 from "../../Assets/Maam Wardah profile.jpeg";
 import ProfileImage6 from "../../Assets/Ijaz Liaqat.jpeg";
+import ProfileImage7 from "../../Assets/Abeera.jpeg";
 
 const PostSection = () => {
-  const posts = [
+  const [open, setOpen] = useState(false);
+  const [newPostContent, setNewPostContent] = useState("");
+  const [postData, setPostData] = useState([
     {
       id: 1,
       name: "Sanaullah",
       role: "Frontend Developer | HTML5 | CSS3 | JavaScript | React.js",
-      content: "A login form is a fundamental component of many web applications, providing a way for users to access secure areas of an app. React, being a declarative and component-based library, makes it easy to build dynamic, responsive, and reusable login forms.",
+      content:
+        "A login form is a fundamental component of many web applications, providing a way for users to access secure areas of an app. React, being a declarative and component-based library, makes it easy to build dynamic, responsive, and reusable login forms.",
       avatar: ProfileImage,
       image: postingImage1,
     },
@@ -85,100 +98,176 @@ const PostSection = () => {
       avatar: ProfileImage6,
       image: postingImage7,
     },
-  ];
+    {
+      id: 8,
+      name: "Abeera Khan",
+      role: "Developing Solutions Scholar | MA Educational Leadership and Management | Educator | Professional Development Services",
+      content:
+        "Excited to share that I’ve started my Masters in Educational Leadership and Management at the University of Nottingham this September, supported by the UoN Flagship Developing Solutions Scholarship.This milestone wouldn’t have been possible without my family, my formative years at Forman Christian College (A Chartered University), and the incredible experience of working as an educator and change-maker with organizations like Science Fuse, University Of Central Punjab, and xWave in Pakistan. Also some 'silent' mentors, teachers who have written recommendations @Jaffer Hassan, and my former manager Danish Khan's support can not be forgotten. Looking forward to new opportunities in Nottingham and the United Kingdom, continuing my journey as an educator. 🚀#Masters hashtag#EducationalLeadership hashtag#UoN",
+      avatar: ProfileImage7,
+      image: postingImage8,
+    },
+  ]);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => {
+    setOpen(false);
+    setNewPostContent("");
+  };
+
+  const handlePost = () => {
+    if (newPostContent.trim() === "") return;
+
+    const newPost = {
+      id: postData.length + 1,
+      name: "Sanaullah",
+      role: "Front-End Web Developer | React.js | Next.js",
+      content: newPostContent,
+      avatar: ProfileImage,
+    };
+
+    setPostData([newPost, ...postData]);
+    handleClose();
+  };
 
   return (
-    <Box>
-      <Box className="p-3 border rounded-2 d-flex flex-column gap-2 bg-white">
-        <Box className="d-flex align-items-center gap-2">
-          <Avatar src={ProfileImage} />
-          <TextField
-            fullWidth
-            variant="outlined"
-            placeholder="Start a post"
-            sx={{
-              borderRadius: 20,
-              "& .MuiOutlinedInput-root": {
-                borderRadius: 20,
-              },
-            }}
-          />
-        </Box>
-
-        <Box className="d-flex flex-wrap justify-content-evenly">
-          <Button
-            color="black"
-            startIcon={<VideoCallIcon className="text-success" />}
-          >
-            Video
-          </Button>
-          <Button className="text-dark"
-            startIcon={<PhotoCameraIcon style={{ color: "blue" }} />}
-          >
-            Photo
-          </Button>
-          <Button
-            color="black"
-            startIcon={<ArticleIcon className="text-warning" />}
-          >
-            article
-          </Button>
-        </Box>
-      </Box>
-
-      <hr />
-
-      {posts.map((post) => (
-        <Card key={post.id} className="mb-3 p-3">
-          <div className="d-flex align-items-center">
-            <Avatar src={post.avatar} alt="User" className="me-2" />
-            <div>
-              <h6>{post.name}</h6>
-              <p className="text-muted">{post.role}</p>
-            </div>
-          </div>
-          <p className="mt-3">{post.content}</p>
-          {post.image && (
-            <img
-              src={post.image}
-              alt="Post"
-              style={{ width: "100%", borderRadius: "10px" }}
-              className="mt-3"
+    <>
+      <Box>
+        <Box className="p-3 border rounded-2 d-flex flex-column gap-2 bg-white">
+          <Box className="d-flex align-items-center gap-2">
+            <Avatar src={ProfileImage} />
+            <TextField
+              fullWidth
+              variant="outlined"
+              placeholder="Start a post"
+              onClick={handleOpen}
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: 8,
+                },
+              }}
             />
-          )}
-          <Box className="d-flex flex-wrap justify-content-between mt-2">
+          </Box>
+
+          <Box className="d-flex flex-wrap justify-content-evenly">
             <Button
-              variant="text"
-              startIcon={<ThumbUpIcon />}
-              className="text-muted"
+              color="black"
+              startIcon={<VideoCallIcon className="text-success" />}
             >
-              Like
+              Video
             </Button>
             <Button
-              variant="text"
-              startIcon={<CommentIcon />}
-              className="text-muted"
+              className="text-dark"
+              startIcon={<PhotoCameraIcon style={{ color: "blue" }} />}
             >
-              Comment
+              Photo
             </Button>
             <Button
-              variant="text"
-              startIcon={<ShareIcon />}
-              className="text-muted"
+              color="black"
+              startIcon={<ArticleIcon className="text-warning" />}
             >
-              Share
-            </Button>
-            <Button
-              variant="text"
-              startIcon={<RepeatIcon />}
-              className="text-muted"
-            >
-              Repost
+              article
             </Button>
           </Box>
-        </Card>
-      ))}
-    </Box>
+        </Box>
+
+        <hr />
+
+        {postData.map((post) => (
+          <Card key={post.id} className="mb-3 p-3">
+            <div className="d-flex align-items-center">
+              <Avatar src={post.avatar} alt="User" className="me-2" />
+              <div>
+                <h6>{post.name}</h6>
+                <p className="text-muted">{post.role}</p>
+              </div>
+            </div>
+            <p className="mt-3">{post.content}</p>
+            {post.image && (
+              <img
+                src={post.image}
+                alt="Post"
+                style={{ width: "100%", borderRadius: "10px" }}
+                className="mt-3"
+              />
+            )}
+            <Box className="d-flex flex-wrap justify-content-between mt-2">
+              <Button
+                variant="text"
+                startIcon={<ThumbUpIcon />}
+                className="text-muted"
+              >
+                Like
+              </Button>
+              <Button
+                variant="text"
+                startIcon={<CommentIcon />}
+                className="text-muted"
+              >
+                Comment
+              </Button>
+              <Button
+                variant="text"
+                startIcon={<ShareIcon />}
+                className="text-muted"
+              >
+                Share
+              </Button>
+              <Button
+                variant="text"
+                startIcon={<RepeatIcon />}
+                className="text-muted"
+              >
+                Repost
+              </Button>
+            </Box>
+          </Card>
+        ))}
+        {/* Modal */}
+        <Modal open={open} onClose={handleClose} aria-labelledby="modal-title">
+          <Box
+            className="position-absolute top-50 start-50 translate-middle bg-white shadow-lg p-4 rounded"
+            style={{
+              width: "90%",
+              maxWidth: "800px",
+              maxHeight: "90vh",
+              overflowY: "auto",
+            }}
+          >
+            <Typography id="modal-title" variant="h6" component="h2">
+              Create a Post
+            </Typography>
+            <TextField
+              fullWidth
+              multiline
+              rows={7}
+              placeholder="What do you want to talk about?"
+              variant="outlined"
+              className="mt-2"
+              value={newPostContent}
+              onChange={(e) => setNewPostContent(e.target.value)}
+            />
+            <Box className="d-flex justify-content-end mt-3">
+              <Button
+                variant="outlined"
+                color="secondary"
+                onClick={handleClose}
+              >
+                Cancel
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                className="ms-3"
+                onClick={handlePost}
+              >
+                Post
+              </Button>
+            </Box>
+          </Box>
+        </Modal>
+      </Box>
+    </>
   );
 };
 

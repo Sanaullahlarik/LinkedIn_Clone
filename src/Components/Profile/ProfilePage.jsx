@@ -4,7 +4,6 @@ import {
   Box,
   Card,
   Typography,
-  Button,
   CardContent,
   Link,
   IconButton,
@@ -45,6 +44,7 @@ import HelpIcon from "@mui/icons-material/Help";
 import SettingsIcon from "@mui/icons-material/Settings";
 import SecurityIcon from "@mui/icons-material/Security";
 import FolderIcon from "@mui/icons-material/Folder";
+import { Button } from "react-bootstrap";
 
 const ProfilePage = () => {
   return (
@@ -273,7 +273,7 @@ const ProfilePage = () => {
                     1,026 followers
                   </Typography>
 
-                  <Box className="d-flex justify-content-start mb-3">
+                  <Box className="d-flex justify-content-start mb-3 d-none d-md-block">
                     <Button
                       variant="contained"
                       className="rounded-pill px-3 bg-success text-small"
@@ -994,7 +994,6 @@ const ProfilePage = () => {
                     className="rounded-pill mt-2 text-dark border-dark"
                     variant="outlined"
                   >
-                    {" "}
                     <PersonAddAltIcon /> Connect
                   </Button>
                 </Box>

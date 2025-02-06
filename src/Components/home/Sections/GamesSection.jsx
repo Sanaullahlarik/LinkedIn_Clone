@@ -1,9 +1,5 @@
 import React from "react";
 import { Box, Typography, Card as MuiCard, CardContent } from "@mui/material";
-import tangoGameImg from "../../../Components/Assets/tango-img.svg";
-import queenGameImg from "../../../Components/Assets/queen.svg";
-import pinpointGameImg from "../../../Components/Assets/pinpoint.svg";
-import crossClimbGameImg from "../../../Components/Assets/crossClimb.svg";
 import HiringImg from "../../Assets/HiringImage.png";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 

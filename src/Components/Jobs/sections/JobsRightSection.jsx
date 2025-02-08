@@ -14,7 +14,7 @@ import {
   Close,
 } from "@mui/icons-material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import MyProfile from "../../Assets/Sanaullah.png";
+import MyProfile from "../../Assets/Sanaullah.jpg";
 import JobsImg1 from "../../Assets/spiralyze_logo.jpeg";
 import JobSimg2 from "../../Assets/wizdaa_logo.jpeg";
 import JobsImg3 from "../../Assets/daily_tech_sol_logo.jpeg";

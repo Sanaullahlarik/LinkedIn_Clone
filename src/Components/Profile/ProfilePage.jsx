@@ -18,7 +18,7 @@ import {
 } from "@mui/material";
 import HiringImg from "../Assets/HiringImage.png";
 import CoverPhoto from "../Assets/banner.png";
-import ProfilePicture from "../Assets/Sanaullah.png";
+import ProfilePicture from "../Assets/Sanaullah.jpg";
 import LaunchIcon from "@mui/icons-material/Launch";
 import EditIcon from "@mui/icons-material/Edit";
 import VisibilityIcon from "@mui/icons-material/Visibility";

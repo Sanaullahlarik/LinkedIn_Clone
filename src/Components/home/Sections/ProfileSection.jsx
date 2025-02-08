@@ -7,7 +7,7 @@ import {
   Divider,
   CardContent,
 } from "@mui/material";
-import ProfilePicture from "../../Assets/Sanaullah.png";
+import ProfilePicture from "../../Assets/Sanaullah.jpg";
 import CoverPhoto from "../../Assets/banner.png";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 
